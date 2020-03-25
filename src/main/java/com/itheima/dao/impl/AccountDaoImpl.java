@@ -16,21 +16,15 @@ public class AccountDaoImpl implements IAccountDao {
 
     private QueryRunner runner;
 
+    private String name;
+
     public void setRunner(QueryRunner runner) {
         this.runner = runner;
     }
 
     public List<Account> findAllAccount() {
         try {
-
-            System.out.println(123);
-
-
-            System.out.println(111111);
             return runner.query("select * from account",new BeanListHandler<Account>(Account.class));
-
-
-
 
         } catch (Exception e) {
             throw new RuntimeException(e);
